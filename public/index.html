@@ -1,0 +1,75 @@
+<html ng-app="myApp">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    <title>Tournament App</title>
+</head>
+
+<body>
+    <div class="container" ng-controller="userCtrl">
+        <h1>WG Tournament App</h1>
+
+        Users:
+        <div>
+            <select name="user-group" id="userGroup" class="form-control" ng-model="selectedUserAccount"
+                ng-change="update(selectedUserAccount)">
+                <option value="0" selected="selected">Select a user...</option>
+                <option ng-repeat="user in userAccounts" value="{{user.id}}">
+                    {{user.userName}}
+                </option>
+            </select>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Platform</th>
+                    <th>Title</th>
+                    <th>Entry Fee</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="tournoment in tournomentlist">
+                    <td>{{tournoment.platform}}</td>
+                    <td>{{tournoment.title}}</td>
+                    <td>{{tournoment.entryFee.toFixed(2)}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+        <br>
+        <h1>Leaderboard</h1>
+        <ol class="tournaments-list">
+            <li ng-repeat="user in leaderBoardAccounts">
+                <span>{{user.userName}} - </span>
+                <span class="badge badge-primary">#MATCH: {{user.numberMatches}}  </span>
+                <span class="badge badge-secondary">SCORE: {{user.score}}  </span>
+                <span class="badge badge-success">WIN: {{user.win}}  </span>
+                <span class="badge badge-danger">LOSS: {{user.loss}}</span>
+            </li>
+        </ol>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <script src="app.js"></script>
+    <script src="services/TournamentService.js"></script>
+    <script src="controllers/UserController.js"></script>
+
+</body>
+
+</html>

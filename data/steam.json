@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "platform": "steam",
+        "title": "Fifa 17 Championship",
+        "entryFee": 15.00
+    },
+    {
+        "id": 2,
+        "platform": "steam",
+        "title": "NHL 17 Monthly Series",
+        "entryFee": 5.50
+    }
+]

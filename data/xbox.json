@@ -1,0 +1,13 @@
+[{
+    "id": 1,
+    "platform": "xbox",
+    "title": "Fifa 17 Championship",
+    "entryFee": 5.00
+},
+{
+    "id": 2,
+    "platform": "xbox",
+    "title": "NHL 17 Monthly Series",
+    "entryFee": 10.50
+}
+]
