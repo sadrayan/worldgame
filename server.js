@@ -8,7 +8,7 @@ app.use(express.static(__dirname + '/public'));
 app.use('/health', (req, res) => {
     res.writeHead(200, {
         'Content-Type': 'application/json',
-        "Access-Control-Allow-Origin": "http://localhost:8081",
+        "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Credentials": true
     });
     res.end("Up and running!\n ");
@@ -17,7 +17,7 @@ app.use('/health', (req, res) => {
 app.get('/tournaments/xbox', function (req, res) {
     res.writeHead(200, {
         'Content-Type': 'application/json',
-        "Access-Control-Allow-Origin": "http://localhost:8081",
+        "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Credentials": true
     });
     const dataPath = './data/xbox.json';
@@ -33,7 +33,7 @@ app.get('/tournaments/xbox', function (req, res) {
 app.get('/tournaments/ps4', function (req, res) {
     res.writeHead(200, {
         'Content-Type': 'application/json',
-        "Access-Control-Allow-Origin": "http://localhost:8081",
+        "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Credentials": true
     });
     const dataPath = './data/ps4.json';
@@ -49,7 +49,7 @@ app.get('/tournaments/ps4', function (req, res) {
 app.get('/tournaments/steam', function (req, res) {
     res.writeHead(200, {
         'Content-Type': 'application/json',
-        "Access-Control-Allow-Origin": "http://localhost:8081",
+        "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Credentials": true
     });
     const dataPath = './data/steam.json';
@@ -66,7 +66,7 @@ app.get('/tournaments/steam', function (req, res) {
 app.get('/usersList', function (req, res) {
     res.writeHead(200, {
         'Content-Type': 'application/json',
-        "Access-Control-Allow-Origin": "http://localhost:8081",
+        "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Credentials": true
     });
     const dataPath = './data/users.json';
@@ -83,7 +83,7 @@ app.get('/usersList', function (req, res) {
 app.get('/user/:id', function (req, res) {
     res.writeHead(200, {
         'Content-Type': 'application/json',
-        "Access-Control-Allow-Origin": "http://localhost:8081",
+        "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Credentials": true
     });
     user = {}

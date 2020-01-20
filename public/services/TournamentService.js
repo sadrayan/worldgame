@@ -1,15 +1,15 @@
-angular.module('myApp').service('tournamentService', function ($http, $q) {
+angular.module('myApp').service('tournamentService', function ($http, $q, $location) {
     var query = function (platform) {
 
-        let url;
+        let url = $location.host() + ':' + $location.port();
         var deferred = $q.defer();
 
         if (platform === 'xbox') {
-            url = baseURL + 'tournaments/xbox';
+            url = url + '/tournaments/xbox';
         } else if (platform === 'ps4') {
-            url = baseURL + 'tournaments/ps4';
+            url = url + '/tournaments/ps4';
         } else {
-            url = baseURL + 'tournaments/steam';
+            url = url + '/tournaments/steam';
         }
 
         $http({
