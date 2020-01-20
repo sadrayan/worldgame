@@ -7,12 +7,19 @@ app.use(express.static(__dirname + '/public'));
 
 app.use('/health', (req, res) => {
     res.writeHead(200, {
-        'Content-Type': 'text/plain'
+        'Content-Type': 'application/json',
+        "Access-Control-Allow-Origin": "http://localhost:8081",
+        "Access-Control-Allow-Credentials": true
     });
     res.end("Up and running!\n ");
 });
 
 app.get('/tournaments/xbox', function (req, res) {
+    res.writeHead(200, {
+        'Content-Type': 'application/json',
+        "Access-Control-Allow-Origin": "http://localhost:8081",
+        "Access-Control-Allow-Credentials": true
+    });
     const dataPath = './data/xbox.json';
     fs.readFile(dataPath, 'utf8', (err, data) => {
         if (err)
@@ -24,6 +31,11 @@ app.get('/tournaments/xbox', function (req, res) {
 })
 
 app.get('/tournaments/ps4', function (req, res) {
+    res.writeHead(200, {
+        'Content-Type': 'application/json',
+        "Access-Control-Allow-Origin": "http://localhost:8081",
+        "Access-Control-Allow-Credentials": true
+    });
     const dataPath = './data/ps4.json';
     fs.readFile(dataPath, 'utf8', (err, data) => {
         if (err)
@@ -35,6 +47,11 @@ app.get('/tournaments/ps4', function (req, res) {
 })
 
 app.get('/tournaments/steam', function (req, res) {
+    res.writeHead(200, {
+        'Content-Type': 'application/json',
+        "Access-Control-Allow-Origin": "http://localhost:8081",
+        "Access-Control-Allow-Credentials": true
+    });
     const dataPath = './data/steam.json';
     fs.readFile(dataPath, 'utf8', (err, data) => {
         if (err)
