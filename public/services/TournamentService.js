@@ -5,11 +5,11 @@ angular.module('myApp').service('tournamentService', function ($http, $q, $locat
         var deferred = $q.defer();
 
         if (platform === 'xbox') {
-            url = url + '/tournaments/xbox';
+            url =  'tournaments/xbox';
         } else if (platform === 'ps4') {
-            url = url + '/tournaments/ps4';
+            url = 'tournaments/ps4';
         } else {
-            url = url + '/tournaments/steam';
+            url = 'tournaments/steam';
         }
 
         $http({
