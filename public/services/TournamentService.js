@@ -31,7 +31,7 @@ angular.module('myApp').service('tournamentService', function ($http, $q, $locat
         let url;
         var deferred = $q.defer();
 
-        $http.get(baseURL + 'user/' + userId).then(function (response) {
+        $http.get('user/' + userId).then(function (response) {
             user = response.data;
             console.log('user', user);
         });
